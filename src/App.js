@@ -6,9 +6,7 @@ import {data} from "./helper/data"
 import React, { useState } from "react";
 
 function App() {
-
   const [search,setSearch]=useState("");
-
   return (
     <div className="App">
       <Header onSearch={setSearch}  />
