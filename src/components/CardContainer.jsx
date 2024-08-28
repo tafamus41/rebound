@@ -1,12 +1,15 @@
 import PlayerCard from "./PlayerCard";
+import {data} from "../helper/data"
 
-const CardContainer = ({ nbaplayers }) => {
-    console.log(nbaplayers);
+const CardContainer = ({ nbaplayers,search }) => {
+    const filteredPlayers= data.filter((player) =>
+        player.name.toLowerCase().includes(search.toLowerCase())
+      );
   return (
     <div className="containerAll my-4 p-2">
       <div className="cardRow my-2" >
-        {nbaplayers.map((item) => (
-          <PlayerCard key={item.name} {...item} />
+        {filteredPlayers.map((item) => (
+          <PlayerCard players={filteredPlayers} key={item.name} {...item} />
         ))}
       </div>
     </div>

@@ -1,13 +1,14 @@
-import logo from "../assets/nba-logo.png"
+import logo from "../assets/nba-logo.png";
 
-const Header = () => {
+const Header = ({onSearch}) => {
+
   return (
     <div className="logoandtext">
       <p>
         <img src={logo} alt="" />
       </p>
       <h1 >NBA Legends</h1>
-      <input type="search" name="" id="" placeholder="Search Player..."/>
+      <input onChange={(e)=>onSearch(e.target.value)} type="search" name="" id="search" placeholder="Search Player..."/>
     </div>
   );
 };
